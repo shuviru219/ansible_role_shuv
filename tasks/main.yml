@@ -1,0 +1,26 @@
+---
+- name: Installing  "{{ server_name }}" Server
+  yum: 
+   name: "{{ server_name }}"
+   state: present
+
+- name: Creating Content file 
+  template: 
+   src: index.html.j2
+   dest: "{{ content_main_location }}/index.html"
+
+- name: Copying Static File 
+  copy: 
+   src: shuv.html 
+   dest: "{{ content_main_location }}/shuv.html"
+  notify: restart my service
+
+- name: Printing the webpage
+  uri: 
+   url:  "{{ myurl }}"  
+   return_content: yes
+  register: url
+
+- name: debug module
+  debug:
+   var: url.content 

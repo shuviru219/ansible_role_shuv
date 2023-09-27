@@ -1,0 +1,3 @@
+myurl: http://192.168.100.17
+server_name: httpd
+content_main_location: /var/www/html
