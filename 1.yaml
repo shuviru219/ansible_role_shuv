@@ -10,6 +10,6 @@
 
   - name: Create Index File
     copy:
-     content: "{{ name }}"
+     content: "{{ name }} , Thank You."
      dest: /var/www/html/index.html
 
