@@ -1,0 +1,11 @@
+---
+
+- name: Start Apache Server
+  hosts: all
+  tasks:
+  - name: Starting  The Service
+    service:
+     name: httpd
+     state: started
+     enabled: yes
+

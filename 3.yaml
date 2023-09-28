@@ -1,0 +1,14 @@
+---
+
+- name: Configuring Apache Server
+  hosts: all
+  tasks:
+  - name: Printing the webpage
+    uri: 
+     url:  "{{ myurl }}"  
+     return_content: yes
+    register: url
+
+  - name: debug module
+    debug:
+     var: url.content 

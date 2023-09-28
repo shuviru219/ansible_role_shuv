@@ -1,0 +1,15 @@
+---
+
+- name: Configuring Apache Server
+  hosts: all
+  tasks:
+  - name: Installation of Apache server package
+    yum:
+     name: httpd
+     state: present
+
+  - name: Create Index File
+    copy:
+     content: "{{ name }}"
+     dest: /var/www/html/index.html
+
