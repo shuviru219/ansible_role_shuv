@@ -1,0 +1,4 @@
+---
+- hosts: 44.227.107.21
+  roles: 
+  - role: fidelity.myapp.mayank
